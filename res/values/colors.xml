@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dim_red">#930</color>
+    <color name="bright_red">#a30</color>
+    <color name="cyan">#07f</color>
+    <color name="purple">#70a</color>
+    <color name="dark_purple">#50a</color>
+    <color name="light_purple">#a6c</color>
+    <color name="blue">#f60</color>
+    <color name="dark_blue">#a50</color>
+    <color name="light_blue">#f77</color>
+    <color name="silver">#779</color>
+    <color name="dark_silver">#443</color>
+    <color name="light_silver">#eef</color>
+    <color name="bubble">#00f</color>
+    <color name="dark_bubble">#007</color>
+    <color name="light_bubble">#77f</color>
+    <color name="wall">#f93</color>
+    <drawable name="purple">#70a</drawable>
+    <drawable name="green">#0f0</drawable>
+    <drawable name="translucent_background">#00ffffff</drawable>
+</resources>

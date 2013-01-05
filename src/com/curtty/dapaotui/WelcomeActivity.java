@@ -29,9 +29,5 @@ public class WelcomeActivity extends Activity implements OnTouchListener{
 		return true;
 	}
 	
-
-    
-	
-	
 }
 	

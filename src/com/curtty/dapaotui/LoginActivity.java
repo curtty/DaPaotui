@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,7 +18,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
+import com.curtty.dapaotui.common.Constant;
 import com.curtty.dapaotui.database.*;
+import com.curtty.dapaotui.web.UsersDownloader;
+import com.curtty.dapaotui.web.UsersDownloaderDelegate;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
@@ -210,11 +214,13 @@ public class LoginActivity extends Activity implements UsersDownloaderDelegate {
 			String result, String next_url) {
 		mUsersDownloader = null;
 		showProgress(false);
-		Intent i = new Intent(LoginActivity.this, WelcomeActivity.class);
+		Intent i = new Intent(LoginActivity.this, MainActivity.class);
 		startActivity(i);
 		finish();
-		
-		
+		SharedPreferences.Editor editor = getSharedPreferences(Constant.USER_ACCOUNT_PREFS, MODE_PRIVATE).edit();
+		editor.putString(Constant.USER_ACCOUNT_PREFS_PSW, mPassword);
+		editor.putString(Constant.USER_ACCOUNT_PREFS_USER, mEmail);
+		editor.commit();
 	}
 
 	@Override
