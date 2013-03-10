@@ -1,5 +1,7 @@
 package com.curtty.dapaotui;
 
+import java.util.ArrayList;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -19,7 +21,10 @@ import android.widget.TextView;
 
 
 import com.curtty.dapaotui.common.Constant;
+import com.curtty.dapaotui.data.BaseData;
+import com.curtty.dapaotui.data.DataWarehouse;
 import com.curtty.dapaotui.database.*;
+import com.curtty.dapaotui.web.UpdaterDelegate;
 import com.curtty.dapaotui.web.UsersDownloader;
 import com.curtty.dapaotui.web.UsersDownloaderDelegate;
 
@@ -214,15 +219,43 @@ public class LoginActivity extends Activity implements UsersDownloaderDelegate {
 			String result, String next_url) {
 		mUsersDownloader = null;
 		showProgress(false);
-		Intent i = new Intent(LoginActivity.this, MainActivity.class);
-		startActivity(i);
-		finish();
+		downloadData();
 		SharedPreferences.Editor editor = getSharedPreferences(Constant.USER_ACCOUNT_PREFS, MODE_PRIVATE).edit();
 		editor.putString(Constant.USER_ACCOUNT_PREFS_PSW, mPassword);
 		editor.putString(Constant.USER_ACCOUNT_PREFS_USER, mEmail);
 		editor.commit();
 	}
-
+	private void downloadData(){
+		DataWarehouse.sRequests = new DataWarehouse(new DummyUpdater());
+		DataWarehouse.sRequests.update(new UpdaterDelegate() {
+			
+			@Override
+			public void onUsersDownloadSuccess(ArrayList<BaseData> lst) {
+				startActivity(new Intent(LoginActivity.this,MainActivity.class));
+				finish();
+				
+			}
+			
+			@Override
+			public void onUsersDownloadStart() {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onUsersDownloadProgress(Integer... progress) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onUsersDownloadFailure(Exception exception) {
+				//this means there is something wrong
+				finish();				
+			}
+		});
+	}
+	
 	@Override
 	public void onUsersDownloadFailure(UsersDownloader downloader,
 			Exception exception) {
