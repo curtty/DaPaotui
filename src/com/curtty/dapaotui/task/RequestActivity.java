@@ -1,10 +1,14 @@
-package com.curtty.dapaotui;
+package com.curtty.dapaotui.task;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import com.commonsware.cwac.thumbnail.ThumbnailAdapter;
+import com.curtty.dapaotui.DPTApplication;
+import com.curtty.dapaotui.R;
+import com.curtty.dapaotui.R.id;
+import com.curtty.dapaotui.R.layout;
 import com.curtty.dapaotui.adapter.RequestAdapter;
 import com.curtty.dapaotui.data.DataWarehouse;
 

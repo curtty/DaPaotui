@@ -1,6 +1,8 @@
 package com.curtty.dapaotui.common;
 
 import android.R.integer;
+import android.content.Intent;
+import android.graphics.Bitmap;
 
 public class Utils {
 	public static final String timeString(long time){
@@ -31,4 +33,19 @@ public class Utils {
 	public static final double rad2deg(double rad) {
 		return (rad * 180.0 / Math.PI);
 	}
+
+
+	public static Intent getCropImageIntent(Bitmap data) {
+		Intent intent = new Intent("com.android.camera.action.CROP");
+		intent.setType("image/*");
+		intent.putExtra("data", data);
+		intent.putExtra("crop", "true");
+		intent.putExtra("aspectX", 1);
+		intent.putExtra("aspectY", 1);
+		intent.putExtra("outputX", 128);
+		intent.putExtra("outputY", 128);
+		intent.putExtra("return-data", true);
+		return intent;
+	}
+
 }

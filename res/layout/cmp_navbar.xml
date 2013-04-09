@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="#7ff" >
+
+    <TextView
+        android:id="@+id/navi_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/navi_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="#0000"
+        android:scaleType="centerInside"
+        android:src="@drawable/bb_ic_b" />
+
+    <ImageButton
+        android:id="@+id/navi_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/bb_ic_n"
+        android:background="#0000" />
+
+</RelativeLayout>

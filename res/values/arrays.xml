@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="sort_type">
         <item>Distance</item>
         <item>Value</item>
         <item>Star</item>
     </string-array>
+    <string-array name="getPic">
+        <item>fromCamera</item>
+        <item>fromLib</item>
+        <item>@android:string/cancel</item>
+    </string-array>
+    <string-array name="gender">
+        <item>unknown</item>
+        <item>female</item>
+        <item>male</item>
+        <item>other</item>
+        <item>@android:string/cancel</item>
+    </string-array>
+
 </resources>

@@ -36,11 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RequestActivity" />
+        <activity android:name="com.curtty.dapaotui.task.RequestActivity" />
         <activity android:name=".BuyActivity" />
         <activity android:name=".ContactActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SMSActivity" />
+        <activity android:name="com.curtty.dapaotui.user.HomePageActivity" />
     </application>
 
 </manifest>
